@@ -7,5 +7,6 @@
     python39Packages.virtualenv
     cudaPackages.cudatoolkit
   ]);
+
   runScript = "bash";
 }).env

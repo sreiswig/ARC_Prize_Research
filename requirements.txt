@@ -1,2 +1,6 @@
 keras
 jax
+torch
+torchvision
+torchaudio
+torch_geometric

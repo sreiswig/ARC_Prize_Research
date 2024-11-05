@@ -15,8 +15,21 @@ if [[ ! "$mode" == "train" && ! "$mode" == "eval" ]]; then
   exit 1
 fi
 
+# Get the backend argument (torch, jax, tensorflow)
+backend="$2"
+
+# Validate the backend argument
+if [[ ! "$backend" == "torch" && ! "$backend" == "jax" && ! "$backend" == "tensorflow" ]]; then
+  echo "Error: Invalid backend. Please specify 'torch', 'jax', or 'tensorflow'."
+  exit 1
+fi
+
+# Set the KERAS_BACKEND environment variable
+export KERAS_BACKEND=$backend
+
 # Call the Python script with the mode argument
-python run.py "$mode"
+python run.py "$mode" "$backend"
 
 # Print success message
 echo "Processed JSON data for mode: $mode"
+echo "Backend: $backend"

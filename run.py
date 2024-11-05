@@ -26,6 +26,7 @@ def read_json_from_directory(directory_path):
 def main():
     parser = argparse.ArgumentParser(description="Process JSON data from a directory.")
     parser.add_argument("mode", choices=["train", "eval"], help="Specify the mode: train or eval")
+    parser.add_argument("backend", choices=["torch", "jax", "tensorflow"], help="Specify the backend: torch, jax, or tensorflow")
     args = parser.parse_args()
 
     root_directory = 'data'

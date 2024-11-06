@@ -2,9 +2,9 @@
 (pkgs.buildFHSUserEnv {
   name = "pipzone";
   targetPkgs = pkgs: (with pkgs; [
-    python39
-    python39Packages.pip
-    python39Packages.virtualenv
+    python312
+    python312Packages.pip
+    python312Packages.virtualenv
     cudaPackages.cudatoolkit
   ]);
 
